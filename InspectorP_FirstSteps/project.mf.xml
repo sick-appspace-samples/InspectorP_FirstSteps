@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<manifest>
+    <application name="InspectorP_FirstSteps">
+        <crown name="InspectorP_FirstSteps">
+            <desc>user script</desc>
+            <serves/>
+        </crown>
+        <meta key="author">AppSpace Sample</meta>
+        <meta key="version">2.5.0</meta>
+        <meta key="licensed">false</meta>
+        <meta key="priority">low</meta>
+        <meta key="copy-protected">false</meta>
+        <meta key="read-protected">false</meta>
+        <meta key="tags">InspectorP,Getting Started</meta>
+        <entry path="resources">
+            <file type="text/xml">AverageIntensity.hdvp</file>
+        </entry>
+        <entry path="scripts" default="01_LiveImage.lua">
+            <file type="text/x-lua">00_Description.lua</file>
+            <file type="text/x-lua">01_LiveImage.lua</file>
+            <file type="text/x-lua">02_IntegrateHALCON.lua</file>
+            <file type="text/x-lua">03_PassFail.lua</file>
+            <file type="text/x-lua">04_OperateStandAlone.lua</file>
+            <file type="text/x-lua">05_RecordToMicroSD.lua</file>
+            <file type="text/x-lua">06_Performance.lua</file>
+        </entry>
+    </application>
+</manifest>

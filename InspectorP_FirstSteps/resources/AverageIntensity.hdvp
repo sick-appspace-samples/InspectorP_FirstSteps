@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.0" halcon_version="11.0.3.2" cs="1013477807">
+<procedure name="AverageIntensity">
+<interface>
+<io>
+<par name="Image"/>
+<par name="ROI"/>
+</io>
+<oc>
+<par name="Mean"/>
+<par name="Deviation"/>
+</oc>
+</interface>
+<body>
+<l>gen_region_contour_xld (ROI, Region, 'filled')</l>
+<l>intensity (Region, Image, Mean, Deviation)</l>
+<l>return ()</l>
+</body>
+<docu id="AverageIntensity">
+<parameters>
+<parameter id="Deviation">
+<default_type>real</default_type>
+<sem_type>real</sem_type>
+<type_list>
+<item>real</item>
+</type_list>
+</parameter>
+<parameter id="Image"/>
+<parameter id="Mean">
+<default_type>real</default_type>
+<sem_type>real</sem_type>
+</parameter>
+</parameters>
+</docu>
+</procedure>
+</hdevelop>
