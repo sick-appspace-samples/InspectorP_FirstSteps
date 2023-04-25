@@ -67,6 +67,8 @@ local function main()
 end
 Script.register('Engine.OnStarted', main)
 
+---@param im Image
+---@param metaData SensorData
 local function grabImage(im, metaData)
   -- System clock in ms at time of image grab
   local tic1 = DateTime.getTimestamp()
@@ -77,8 +79,8 @@ local function grabImage(im, metaData)
   local rect = Shape.createRectangle(rectCenter, 400, 300, 0)
 
   -- Intensity measurement
-  avgInt:setIconicParameter('Image', im)
-  avgInt:setIconicParameter('ROI', rect)
+  avgInt:setImage('Image', im)
+  avgInt:setRegion('ROI', rect)
   local result = avgInt:execute()
   local average = result:getDouble('Mean')
   print('Average intensity = ' .. math.floor(average))

@@ -65,15 +65,16 @@ local function main()
 end
 Script.register('Engine.OnStarted', main)
 
-local function grabImage(im, _)
+---@param im Image
+local function grabImage(im)
   -- Intensity measurement region
   local w, h = im:getSize()
   local rectCenter = Point.create(w / 2, h / 2)
   local rect = Shape.createRectangle(rectCenter, 400, 300, 0)
 
   -- Intensity measurement
-  avgInt:setIconicParameter('Image', im)
-  avgInt:setIconicParameter('ROI', rect)
+  avgInt:setImage('Image', im)
+  avgInt:setRegion('ROI', rect)
   local result = avgInt:execute()
   local average = result:getDouble('Mean')
   print('Average intensity = ' .. math.floor(average))

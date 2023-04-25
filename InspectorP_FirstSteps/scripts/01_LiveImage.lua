@@ -42,6 +42,8 @@ local function main()
 end
 Script.register("Engine.OnStarted", main)
 
+---@param im Image
+---@param metaData SensorData
 local function grabImage(im, metaData)
   viewer:clear()
   viewer:addImage(im)
